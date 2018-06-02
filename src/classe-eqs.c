@@ -68,8 +68,8 @@ void derivs_classe_gslode(int neqs, double t, double *pars,
 
   /* saves a little time to pre-compute indices outside of do_derivs_classe;
    * but do it outside of here, too? */
-  /*int len_lam_i = n * (n + 1) / 2;*/
-  int jk_array[MAXSIZE][2]; /* was: int jk_array[len_lam_i][2]; */
+  int len_lam_i = n * (n + 1) / 2;
+  int jk_array[len_lam_i][2]; /* was: int jk_array[MAXSIZE][2]; */
   fill_jk_array(jk_array, n);
 
   do_derivs_classe(n, pars, y, dydt, jk_array);
@@ -84,7 +84,7 @@ void initial_conditions_classe(int neq, double *vars_l, double *vars_r,
   int i, j, k, m;
 
   int len_lam_i = n * (n + 1) / 2;
-  int jk_array[MAXSIZE][2]; /* was: int jk_array[len_lam_i][2]; */
+  int jk_array[len_lam_i][2]; /* was: int jk_array[MAXSIZE][2]; */
   fill_jk_array(jk_array, n);
 
   /* E: */

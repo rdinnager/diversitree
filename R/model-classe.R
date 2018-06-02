@@ -86,8 +86,8 @@ default.argnames.classe <- function(k) {
 ## cache and initial tip states.
 make.cache.classe <- function(tree, states, k, sampling.f=NULL,
                              strict=TRUE) {
-  if (k > 31)
-    stop("No more than 31 states allowed.  Increase in classe-eqs.c.")
+  # if (k > 31)
+  #   stop("No more than 31 states allowed.  Increase in classe-eqs.c.")
   cache <- make.cache.musse(tree, states, k, sampling.f, strict)
   cache$info <- make.info.classe(k, tree)
   cache
